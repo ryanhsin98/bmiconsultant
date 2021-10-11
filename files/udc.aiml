@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>Hi</pattern>
+    <template>
+        <random>
+            <li>Hello! What is your name?</li>
+            <li>Nice to meet you. What is your name? </li>
+            <li>Great! What is your name?</li>
+        </random> 
+    </template>
+  </category>
+  
+  <category>
+        <pattern>I am *</pattern>
+        <template>
+            Hello <set name = "username"> <star/>! </set>
+            I am your health consultant, Cindy.
+        </template>
+  </category>
+
+  <category>
+        <pattern>*</pattern>
+        <template>
+            Is your BMI less than 18, greater than 24, or between them?
+        </template>
+  </category>
+      
+
+  <category>
+        <pattern>less</pattern>
+        <that>Is your BMI less than 18, greater than 24, or between them</that>
+        <template>
+            Your current BMI index is underweight.
+            Don’t worry, the following is health advice for you. 
+            Following this will improve your current condition.
+            <button>
+            <text>Tips to Maintain a Healthy Weight.</text>
+            <url>https://reverehealth.com/live-better/tips-to-maintain-a-healthy-weight/</url>
+            </button>
+        </template>
+  </category>
+  
+  <category>
+        <pattern>greater</pattern>
+        <that>Is your BMI less than 18, greater than 24, or between them</that>
+        <template>
+            Your current BMI index is overweight.
+            Don’t worry, the following is health advice for you. 
+            Following this will improve your current condition.
+            <button>
+            <text>Tips to Maintain a Healthy Weight.</text>
+            <url>https://reverehealth.com/live-better/tips-to-maintain-a-healthy-weight/</url>
+            </button>
+        </template>
+  </category>
+  
+  <category>
+        <pattern>between</pattern>
+        <that>Is your BMI less than 18, greater than 24, or between them</that>
+        <template>
+            Your BMI index shows that you are healthy.
+            Keep it up! Meet me again after half a year to track your health.
+        </template>
+  </category>
+  
+  <category>
+        <pattern>bye</pattern>
+        <template>
+            Bye. <get name = "username"/> Thanks for the conversation!
+        </template>
+  </category>
+
+
+</aiml>
